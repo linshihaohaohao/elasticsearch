@@ -1,0 +1,24 @@
+#spring:
+#   data:
+#        elasticsearch:
+##            cluster-name: Scrambler #默认为elasticsearch
+##            cluster-nodes: 127.0.0.1:9200 #配置es节点信息，逗号分隔，如果没有指定，则启动ClientNode
+#            properties:
+#                path:
+#                  logs: ./elasticsearch/log #elasticsearch日志存储目录
+#                  data: ./elasticsearch/data #elasticsearch数据存储目录
+
+spring:
+    data:
+        elasticsearch:
+            cluster-nodes: localhost:9300
+            local: false
+            repositories:
+                enable: true
+
+
+spring.datasource:
+    url: jdbc:mysql://localhost:3306/jeecg?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
