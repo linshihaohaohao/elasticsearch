@@ -7,11 +7,13 @@ import java.util.Date;
 
 /**
  * Created by lsh on 2017/7/11.
+ * indexName 配置必须是全部小写，不然会出异常
  */
-@Document(indexName="article",type="article",indexStoreType="fs",shards=5,replicas=1,refreshInterval="-1")
+@Document(indexName="myes",type="article",indexStoreType="fs",shards=5,replicas=1,refreshInterval="-1")
 public class Article implements Serializable {
     private Long id;
     /**标题*/
+//    @Field(type = FieldType.String, analyzer="ik")//使用ngram进行单字分词
     private String title;
     /**摘要*/
     private String abstracts;
